@@ -12,6 +12,8 @@
 						packages = with pkgs; [
 							air
 							go
+
+							treefmt
 						];
 					};
 				};
