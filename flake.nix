@@ -1,5 +1,5 @@
 {
-  description = "Flake utils demo";
+  description = "lenovo legion linux tui";
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
