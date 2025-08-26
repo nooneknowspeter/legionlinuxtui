@@ -1,1 +1,6 @@
+# nix
 .direnv
+
+# go artifacts
+build
+tmp
