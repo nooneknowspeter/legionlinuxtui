@@ -9,3 +9,9 @@ command = "goimports"
 excludes = ["vendor/*"]
 includes = ["*.go"]
 options = ["-w"]
+
+[formatter.nixfmt-rfc-style]
+command = "nixfmt"
+excludes = []
+includes = ["*.nix"]
+options = []
