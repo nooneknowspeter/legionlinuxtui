@@ -12,6 +12,7 @@
 						packages = with pkgs; [
 							air
 							go
+							gotools
 
 							treefmt
 						];
