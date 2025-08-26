@@ -3,3 +3,9 @@ command = "gofmt"
 excludes = ["vendor/*"]
 includes = ["*.go"]
 options = ["-w"]
+
+[formatter.goimports]
+command = "goimports"
+excludes = ["vendor/*"]
+includes = ["*.go"]
+options = ["-w"]
