@@ -1,0 +1,5 @@
+[formatter.gofmt]
+command = "gofmt"
+excludes = ["vendor/*"]
+includes = ["*.go"]
+options = ["-w"]
