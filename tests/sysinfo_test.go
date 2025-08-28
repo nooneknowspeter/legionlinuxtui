@@ -62,3 +62,24 @@ func TestGPUInformation(t *testing.T) {
 
 	fmt.Printf("%v retrieved all gpu information ", Success)
 }
+
+func TestSystemInformation(t *testing.T) {
+	var (
+		hostName     string = system.System.Name
+		biosVersion  string = system.System.BiosVersion
+		family       string = system.System.Family
+		systemVendor string = system.System.Vendor
+	)
+
+	if hostName == "" || biosVersion == "" || family == "" || systemVendor == "" {
+		t.Errorf("%v retrieve all system information ", Fail)
+		return
+	}
+
+	fmt.Printf("System Hostname : %s\n", hostName)
+	fmt.Printf("System BIOS Version: %s\n", biosVersion)
+	fmt.Printf("System Family: %s\n", family)
+	fmt.Printf("System Vendor: %s\n", systemVendor)
+
+	fmt.Printf("%v retrieved all system information ", Success)
+}
