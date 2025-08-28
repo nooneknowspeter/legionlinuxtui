@@ -155,4 +155,13 @@ var (
 		},
 		DriverModes: DEFAULTDRIVERMODES,
 	}
+
+	WinKey DriverModuleFunction = DriverModuleFunction{
+		File:          "winkey",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
 )
