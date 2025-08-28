@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"legionlinuxtui/src/helpers"
 	"os/exec"
+	"strings"
 )
 
 type (
@@ -16,6 +17,11 @@ type (
 	}
 
 	cpuSensorInformation struct {
+		Name        func() string
+		Temperature func() string
+	}
+
+	gpuSensorInformation struct {
 		Name        func() string
 		Temperature func() string
 	}
@@ -52,6 +58,26 @@ var (
 			cpuTemperature := fmt.Sprintf("%v", string(file[0:2]))
 
 			return cpuTemperature
+		},
+	}
+
+	GPU gpuSensorInformation = gpuSensorInformation{
+		Name: func() string {
+			stdout, err := exec.Command("nvidia-smi", "--query-gpu=name", "--format=csv,noheader").Output()
+			if err != nil {
+				fmt.Printf("command nvidia-smi not found: %v", err)
+			}
+
+			return strings.Split(string(stdout), "\n")[0]
+		},
+
+		Temperature: func() string {
+			stdout, err := exec.Command("nvidia-smi", "--query-gpu=temperature.gpu", "--format=csv,noheader").Output()
+			if err != nil {
+				panic(err)
+			}
+
+			return strings.Split(string(stdout), "\n")[0]
 		},
 	}
 )
