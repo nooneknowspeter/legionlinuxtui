@@ -137,4 +137,13 @@ var (
 		},
 		DriverModes: DEFAULTDRIVERMODES,
 	}
+
+	USBCharging DriverModuleFunction = DriverModuleFunction{
+		File:          "usb_charging",
+		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
 )
