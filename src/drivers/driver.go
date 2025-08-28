@@ -129,6 +129,15 @@ var (
 		DriverModes: DEFAULTDRIVERMODES,
 	}
 
+	RapidCharge DriverModuleFunction = DriverModuleFunction{
+		File:          "rapidcharge",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
+
 	TouchPad DriverModuleFunction = DriverModuleFunction{
 		File:          "touchpad",
 		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
