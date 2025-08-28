@@ -19,7 +19,7 @@ func TestRW(t *testing.T) {
 	fmt.Printf("File Contents: %v\n", file)
 	fmt.Printf("Expected Contents: %v\n", expectedContents)
 	if file != expectedContents {
-		t.Errorf("%v contents do not match what was expected in the file", Fail)
+		t.Errorf("  contents do not match what was expected in the file")
 		return
 	}
 
@@ -32,9 +32,7 @@ func TestRW(t *testing.T) {
 	fmt.Printf("Expected Contents: %v\n", expectedContents)
 
 	if file != expectedContents {
-		t.Errorf("%v contents do not match what was expected in the file", Fail)
+		t.Errorf("  contents do not match what was expected in the file")
 		return
 	}
-
-	fmt.Printf("%v contents match ", Success)
 }
