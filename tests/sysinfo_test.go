@@ -45,3 +45,20 @@ func TestCPUInformation(t *testing.T) {
 
 	fmt.Printf("%v retrieved all cpu information ", Success)
 }
+
+func TestGPUInformation(t *testing.T) {
+	var (
+		gpuName        string = system.GPU.Name()
+		gpuTemperature string = system.GPU.Temperature()
+	)
+
+	if gpuName == "" || gpuTemperature == "" {
+		t.Errorf("%v retrieve all gpu information ", Fail)
+		return
+	}
+
+	fmt.Printf("GPU Model Name: %s\n", gpuName)
+	fmt.Printf("GPU Temperature: %s°C\n", gpuTemperature)
+
+	fmt.Printf("%v retrieved all gpu information ", Success)
+}
