@@ -75,4 +75,13 @@ var (
 		},
 		DriverModes: DEFAULTDRIVERMODES,
 	}
+
+	FNLock DriverModuleFunction = DriverModuleFunction{
+		File:          "fn_lock",
+		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
 )
