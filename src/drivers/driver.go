@@ -129,6 +129,19 @@ var (
 		DriverModes: DEFAULTDRIVERMODES,
 	}
 
+	PowerMode DriverModuleFunction = DriverModuleFunction{
+		File:          "powermode",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: map[int]string{
+			1: "quiet",
+			2: "balanced",
+			3: "performance",
+		},
+	}
+
 	RapidCharge DriverModuleFunction = DriverModuleFunction{
 		File:          "rapidcharge",
 		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
