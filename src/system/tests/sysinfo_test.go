@@ -16,7 +16,7 @@ func TestBatteryInformation(t *testing.T) {
 	)
 
 	if batteryName == "" || batteryCapacity == "" || batteryVoltage == "" || batteryChargingStatus == "" || batteryCycleCount == "" {
-		t.Errorf("%v retrieve all battery information ", Fail)
+		t.Errorf("  retrieve all battery information ")
 		return
 	}
 
@@ -25,8 +25,6 @@ func TestBatteryInformation(t *testing.T) {
 	fmt.Printf("Battery Voltage 󱐋: %sV\n", batteryVoltage)
 	fmt.Printf("Battery Charging Status: %s\n", batteryChargingStatus)
 	fmt.Printf("Battery Cycle Count: %s\n", batteryCycleCount)
-
-	fmt.Printf("%v retrieved all battery information ", Success)
 }
 
 func TestCPUInformation(t *testing.T) {
@@ -36,14 +34,12 @@ func TestCPUInformation(t *testing.T) {
 	)
 
 	if cpuName == "" || cpuTemperature == "" {
-		t.Errorf("%v retrieve all cpu information ", Fail)
+		t.Errorf("  retrieve all cpu information ")
 		return
 	}
 
 	fmt.Printf("CPU Model Name : %s\n", cpuName)
 	fmt.Printf("CPU Temperature : %s°C\n", cpuTemperature)
-
-	fmt.Printf("%v retrieved all cpu information ", Success)
 }
 
 func TestGPUInformation(t *testing.T) {
@@ -53,14 +49,12 @@ func TestGPUInformation(t *testing.T) {
 	)
 
 	if gpuName == "" || gpuTemperature == "" {
-		t.Errorf("%v retrieve all gpu information ", Fail)
+		t.Errorf("  retrieve all gpu information ")
 		return
 	}
 
 	fmt.Printf("GPU Model Name: %s\n", gpuName)
 	fmt.Printf("GPU Temperature: %s°C\n", gpuTemperature)
-
-	fmt.Printf("%v retrieved all gpu information ", Success)
 }
 
 func TestSystemInformation(t *testing.T) {
@@ -72,7 +66,7 @@ func TestSystemInformation(t *testing.T) {
 	)
 
 	if hostName == "" || biosVersion == "" || family == "" || systemVendor == "" {
-		t.Errorf("%v retrieve all system information ", Fail)
+		t.Errorf("  retrieve all system information ")
 		return
 	}
 
@@ -80,6 +74,4 @@ func TestSystemInformation(t *testing.T) {
 	fmt.Printf("System BIOS Version: %s\n", biosVersion)
 	fmt.Printf("System Family: %s\n", family)
 	fmt.Printf("System Vendor: %s\n", systemVendor)
-
-	fmt.Printf("%v retrieved all system information ", Success)
 }
