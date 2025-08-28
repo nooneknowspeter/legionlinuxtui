@@ -33,6 +33,10 @@ type (
 		ChargingStatus func() string
 		CycleCount     func() string
 	}
+
+	fanSensorInformation struct {
+		CurrentSpeed func() string
+	}
 )
 
 var (
@@ -118,6 +122,22 @@ var (
 
 		CycleCount: func() string {
 			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "cycle_count")
+
+			return file
+		},
+	}
+
+	Fan1 fanSensorInformation = fanSensorInformation{
+		CurrentSpeed: func() string {
+			file := helpers.ReadFile(FANINFORMATIONPATH + "fan1_input")
+
+			return file
+		},
+	}
+
+	Fan2 fanSensorInformation = fanSensorInformation{
+		CurrentSpeed: func() string {
+			file := helpers.ReadFile(FANINFORMATIONPATH + "fan2_input")
 
 			return file
 		},
