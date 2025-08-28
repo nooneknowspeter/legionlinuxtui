@@ -1,6 +1,10 @@
 # TODO
 
 - [ ] tui
+  - [ ] ui-ux
+    - [ ] wireframe
+    - [ ] icons
+    - [ ] tty; font and colors
   - [ ] battery status; level, conservation mode toggle
     - [ ] level indicator
     - [ ] conservation mode toggle and status
@@ -18,3 +22,5 @@
   - [ ] max fan speed toggle and status
   - [ ] power mode toggle and status
   - [ ] fan curve edit
+  - [ ] infinite loop; get values
+  - [ ] user password field, sudo
