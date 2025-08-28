@@ -84,4 +84,30 @@ var (
 		},
 		DriverModes: DEFAULTDRIVERMODES,
 	}
+
+	GSync DriverModuleFunction = DriverModuleFunction{
+		File:          "gsync",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
+
+	IGPUMode DriverModuleFunction = DriverModuleFunction{
+		File:          "igpumode",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+	}
+
+	OverDrive DriverModuleFunction = DriverModuleFunction{
+		File:          "overdrive",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
 )
