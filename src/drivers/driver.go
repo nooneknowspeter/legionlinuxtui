@@ -102,6 +102,24 @@ var (
 		},
 	}
 
+	LockFanController DriverModuleFunction = DriverModuleFunction{
+		File:          "lockfancontroller",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
+
+	MaxFanSpeedToggle DriverModuleFunction = DriverModuleFunction{
+		File:          "fan_maxspeed",
+		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
+
 	OverDrive DriverModuleFunction = DriverModuleFunction{
 		File:          "overdrive",
 		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
