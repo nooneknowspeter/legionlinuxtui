@@ -16,6 +16,11 @@ type (
 	}
 )
 
+var DEFAULTDRIVERMODES = map[int]string{
+	0: "disabled",
+	1: "enabled",
+}
+
 func (s *DriverModuleFunction) readValue() int {
 	value, err := strconv.Atoi(helpers.ReadFile(s.SysFSLocation + s.File))
 	if err != nil {
