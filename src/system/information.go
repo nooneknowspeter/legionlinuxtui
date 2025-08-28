@@ -25,6 +25,14 @@ type (
 		Name        func() string
 		Temperature func() string
 	}
+
+	batterySensorInformation struct {
+		Name           func() string
+		Capacity       func() string
+		Voltage        func() string
+		ChargingStatus func() string
+		CycleCount     func() string
+	}
 )
 
 var (
@@ -78,6 +86,40 @@ var (
 			}
 
 			return strings.Split(string(stdout), "\n")[0]
+		},
+	}
+
+	Battery batterySensorInformation = batterySensorInformation{
+		Name: func() string {
+			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "model_name")
+
+			return file
+		},
+
+		Capacity: func() string {
+			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "capacity")
+
+			return file
+		},
+
+		Voltage: func() string {
+			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "voltage_now")
+
+			voltage := fmt.Sprintf("%v.%v", string(file[0:2]), string(file[2]))
+
+			return voltage
+		},
+
+		ChargingStatus: func() string {
+			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "status")
+
+			return file
+		},
+
+		CycleCount: func() string {
+			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "cycle_count")
+
+			return file
 		},
 	}
 )
