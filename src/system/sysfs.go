@@ -1,9 +1,8 @@
-package drivers
+package system
 
 import (
 	"fmt"
 	"legionlinuxtui/src/helpers"
-	"legionlinuxtui/src/system"
 	"strconv"
 )
 
@@ -60,7 +59,7 @@ func (s *DriverModuleFunction) ToggleDriverMode() {
 var (
 	CameraPower DriverModuleFunction = DriverModuleFunction{
 		File:          "camera_power",
-		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -69,7 +68,7 @@ var (
 
 	ConservationMode DriverModuleFunction = DriverModuleFunction{
 		File:          "conservation_mode",
-		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -78,7 +77,7 @@ var (
 
 	FNLock DriverModuleFunction = DriverModuleFunction{
 		File:          "fn_lock",
-		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -87,7 +86,7 @@ var (
 
 	GSync DriverModuleFunction = DriverModuleFunction{
 		File:          "gsync",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -96,7 +95,7 @@ var (
 
 	IGPUMode DriverModuleFunction = DriverModuleFunction{
 		File:          "igpumode",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -104,7 +103,7 @@ var (
 
 	LockFanController DriverModuleFunction = DriverModuleFunction{
 		File:          "lockfancontroller",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -113,7 +112,7 @@ var (
 
 	MaxFanSpeedToggle DriverModuleFunction = DriverModuleFunction{
 		File:          "fan_maxspeed",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -122,7 +121,7 @@ var (
 
 	OverDrive DriverModuleFunction = DriverModuleFunction{
 		File:          "overdrive",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -131,7 +130,7 @@ var (
 
 	PowerMode DriverModuleFunction = DriverModuleFunction{
 		File:          "powermode",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -144,7 +143,7 @@ var (
 
 	RapidCharge DriverModuleFunction = DriverModuleFunction{
 		File:          "rapidcharge",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -153,7 +152,7 @@ var (
 
 	TouchPad DriverModuleFunction = DriverModuleFunction{
 		File:          "touchpad",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -162,7 +161,7 @@ var (
 
 	USBCharging DriverModuleFunction = DriverModuleFunction{
 		File:          "usb_charging",
-		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
@@ -171,7 +170,7 @@ var (
 
 	WinKey DriverModuleFunction = DriverModuleFunction{
 		File:          "winkey",
-		SysFSLocation: system.LEGIONSYSTEMDRIVERPATH,
+		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		GetStatus: func(s *DriverModuleFunction) string {
 			return s.DriverModes[s.readValue()]
 		},
