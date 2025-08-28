@@ -28,3 +28,20 @@ func TestBatteryInformation(t *testing.T) {
 
 	fmt.Printf("%v retrieved all battery information ", Success)
 }
+
+func TestCPUInformation(t *testing.T) {
+	var (
+		cpuName        string = system.CPU.Name()
+		cpuTemperature string = system.CPU.Temperature()
+	)
+
+	if cpuName == "" || cpuTemperature == "" {
+		t.Errorf("%v retrieve all cpu information ", Fail)
+		return
+	}
+
+	fmt.Printf("CPU Model Name : %s\n", cpuName)
+	fmt.Printf("CPU Temperature : %s°C\n", cpuTemperature)
+
+	fmt.Printf("%v retrieved all cpu information ", Success)
+}
