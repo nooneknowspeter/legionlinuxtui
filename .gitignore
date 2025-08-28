@@ -4,3 +4,6 @@
 # go artifacts
 build
 tmp
+
+# tests
+test_file
