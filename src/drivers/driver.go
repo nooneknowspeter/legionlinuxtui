@@ -3,6 +3,7 @@ package drivers
 import (
 	"fmt"
 	"legionlinuxtui/src/helpers"
+	"legionlinuxtui/src/system"
 	"strconv"
 )
 
@@ -55,3 +56,14 @@ func (s *DriverModuleFunction) ToggleDriverMode() {
 	s.writeValue(fmt.Sprintf("%v\n", nextMode))
 	fmt.Printf("toggled %v: %v -> %v\n", s.File, s.DriverModes[currentMode], s.DriverModes[s.readValue()])
 }
+
+var (
+	CameraPower DriverModuleFunction = DriverModuleFunction{
+		File:          "camera_power",
+		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
+)
