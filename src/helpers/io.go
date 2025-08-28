@@ -36,3 +36,19 @@ func ReadFiles(files ...string) []string {
 
 	return fileContents
 }
+
+func WriteToFile(path string, content string) {
+	mutex.Lock()
+	defer mutex.Unlock()
+
+	file, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	_, err = file.Write([]byte(content))
+	if err != nil {
+		panic(err)
+	}
+}
