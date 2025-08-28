@@ -66,4 +66,13 @@ var (
 		},
 		DriverModes: DEFAULTDRIVERMODES,
 	}
+
+	ConservationMode DriverModuleFunction = DriverModuleFunction{
+		File:          "conservation_mode",
+		SysFSLocation: system.IDEASYSTEMDRIVERPATH,
+		GetStatus: func(s *DriverModuleFunction) string {
+			return s.DriverModes[s.readValue()]
+		},
+		DriverModes: DEFAULTDRIVERMODES,
+	}
 )
