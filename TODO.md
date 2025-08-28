@@ -18,7 +18,3 @@
   - [ ] max fan speed toggle and status
   - [ ] power mode toggle and status
   - [ ] fan curve edit
-
-- [ ] backend
-
-- [ ] unit tests
