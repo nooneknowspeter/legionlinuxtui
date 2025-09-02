@@ -45,7 +45,9 @@ func (m model) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
+	statusPane := panes.StatusPane(m.terminalWidth-(styles.Padding*2), m.terminalHeight)
 
+	return statusPane
 }
 
 func Run() {
