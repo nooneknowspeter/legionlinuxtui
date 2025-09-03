@@ -1,26 +1,29 @@
 # TODO
 
 - [ ] tui
-  - [ ] ui-ux
-    - [ ] wireframe
+  - [x] ui-ux
+    - [x] wireframes
     - [ ] icons
-    - [ ] tty; font and colors
-  - [ ] battery status; level, conservation mode toggle
-    - [ ] level indicator
-    - [ ] conservation mode toggle and status
-    - [ ] rapid charging toggle and status
-  - [ ] sensors; realtime line chart
-    - [ ] fan speed
-    - [ ] cpu temp
-    - [ ] gpu temp
-  - [ ] lighting
-  - [ ] hybrid mode toggle and status
-  - [ ] always-on-usb toggle and status
-  - [ ] camera toggle and status
-  - [ ] touchpad toggle and status
-  - [ ] fnlock toggle and status
-  - [ ] max fan speed toggle and status
-  - [ ] power mode toggle and status
-  - [ ] fan curve edit
-  - [ ] infinite loop; get values
+    - [x] tty; font and colors
+  - [x] infinite loop; get values
   - [ ] user password field, sudo
+  - [x] status pane
+    - [x] system information
+    - [x] cpu information
+    - [x] gpu information
+    - [x] fan information
+    - [x] battery information
+  - [ ] control pane
+    - [ ] hybrid mode
+    - [ ] always-on-usb
+    - [ ] camera
+    - [ ] touchpad
+    - [ ] fnlock
+    - [ ] fan speed
+    - [ ] power mode
+    - [ ] lighting
+    - [ ] conservation mode
+    - [ ] rapid charging
+  - [ ] logs pane
+  - [ ] information pane
+    - [ ] extra
