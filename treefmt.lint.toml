@@ -1,0 +1,64 @@
+[formatter.gofmt]
+command = "gofmt"
+excludes = []
+includes = ["*.go"]
+options = ["-l"]
+
+[formatter.goimports]
+command = "goimports"
+excludes = []
+includes = ["*.go"]
+options = ["-l"]
+
+[formatter.golangci-lint]
+command = "golangci-lint"
+excludes = []
+includes = ["src/..."]
+options = ["run"]
+
+[formatter.mdformat]
+command = "mdformat"
+excludes = []
+includes = ["*.md"]
+options = ["--check"]
+
+[formatter.nixfmt-rfc-style]
+command = "nixfmt"
+excludes = []
+includes = ["*.nix"]
+options = ["--check"]
+
+[formatter.prettier]
+command = "prettier"
+excludes = []
+includes = [
+  "*.cjs",
+  "*.css",
+  "*.html",
+  "*.js",
+  "*.json",
+  "*.json5",
+  "*.jsx",
+  "*.md",
+  "*.mdx",
+  "*.mjs",
+  "*.scss",
+  "*.ts",
+  "*.tsx",
+  "*.vue",
+  "*.yaml",
+  "*.yml",
+]
+options = ["--check"]
+
+[formatter.revive]
+command = "revive"
+excludes = []
+includes = ["*.go"]
+options = ["src/..."]
+
+[formatter.taplo]
+command = "taplo"
+excludes = []
+includes = ["*.toml"]
+options = ["lint"]
