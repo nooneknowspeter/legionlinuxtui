@@ -20,8 +20,11 @@
             packages = with pkgs; [
               air
               go
+              golangci-lint
               gotools
+              revive
 
+              gnumake
               treefmt
 
               mdformat
