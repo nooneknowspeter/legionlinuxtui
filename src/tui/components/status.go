@@ -15,5 +15,5 @@ func StatusComponent(title string, information ...string) string {
 		componentContent = append(componentContent, v)
 	}
 
-	return lipgloss.NewStyle().Width(30).Render(lipgloss.JoinVertical(lipgloss.Top, componentContent...))
+	return lipgloss.NewStyle().Render(lipgloss.JoinVertical(lipgloss.Top, componentContent...))
 }
