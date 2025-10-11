@@ -10,6 +10,8 @@ var (
 	mutex sync.RWMutex
 )
 
+// ReadFile -> read file from fs
+// file: "/file/path"
 func ReadFile(file string) string {
 	mutex.RLock()
 	defer mutex.RUnlock()
@@ -24,6 +26,9 @@ func ReadFile(file string) string {
 	return splittedString[0]
 }
 
+// ReadFiles -> read files from fs
+// example
+// files: "path1", "path2"
 func ReadFiles(files ...string) []string {
 	fileContents := make([]string, len(files))
 
@@ -37,6 +42,9 @@ func ReadFiles(files ...string) []string {
 	return fileContents
 }
 
+// WriteToFile -> write to file in fs
+// path: "/path/to/file"
+// content: "fileContents"
 func WriteToFile(path string, content string) {
 	mutex.Lock()
 	defer mutex.Unlock()
@@ -45,9 +53,13 @@ func WriteToFile(path string, content string) {
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
 
 	_, err = file.Write([]byte(content))
+	if err != nil {
+		panic(err)
+	}
+
+	err = file.Close()
 	if err != nil {
 		panic(err)
 	}
