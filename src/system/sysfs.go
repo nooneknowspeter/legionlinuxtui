@@ -65,28 +65,24 @@ var (
 		1: "enabled",
 	}
 
-	// ConservationMode ->
 	ConservationMode = DriverModuleFunction{
 		File:          "conservation_mode",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// FNLock ->
 	FNLock = DriverModuleFunction{
 		File:          "fn_lock",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// HybridMode -> gsync
 	HybridMode = DriverModuleFunction{
 		File:          "gsync",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// LockFanController ->
 	LockFanController = DriverModuleFunction{
 		File:          "lockfancontroller",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
@@ -100,14 +96,12 @@ var (
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// OverDrive ->
 	OverDrive = DriverModuleFunction{
 		File:          "overdrive",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// PowerMode ->
 	PowerMode = DriverModuleFunction{
 		File:          "powermode",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
@@ -119,28 +113,24 @@ var (
 		},
 	}
 
-	// RapidCharge ->
 	RapidCharge = DriverModuleFunction{
 		File:          "rapidcharge",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// TouchPad ->
 	TouchPad = DriverModuleFunction{
 		File:          "touchpad",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// USBCharging ->
 	USBCharging = DriverModuleFunction{
 		File:          "usb_charging",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
 		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	// WinKey ->
 	WinKey = DriverModuleFunction{
 		File:          "winkey",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
