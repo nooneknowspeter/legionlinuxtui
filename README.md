@@ -4,7 +4,9 @@ A terminal user interface for controlling Lenovo Legion laptops.
 
 It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux).
 
-<!-- TODO: demonstration -->
+[![demo1](https://asciinema.org/a/S2jHeMt6bLGDgOlsIMJwZH7PU.svg)](https://asciinema.org/a/S2jHeMt6bLGDgOlsIMJwZH7PU)
+
+![demo2](./public/demo2.gif)
 
 ## Features
 
