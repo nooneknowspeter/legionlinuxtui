@@ -6,154 +6,85 @@ import (
 	"testing"
 )
 
-func TestCameraPower(t *testing.T) {
-	driver := system.CameraPower
-
-	if driver.GetStatus(&driver) == "" {
+func testDriverFunctionGetStatus(t *testing.T, driver *system.DriverModuleFunction) {
+	if driver.GetDriverFunctionState() == "" {
 		t.Errorf("  failed to retrieve current %v status", driver.File)
 		return
 	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetDriverFunctionState())
+}
 
+func testDriverFunctionToggle(driver *system.DriverModuleFunction) {
 	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
-
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	driver.ToggleDriverState()
 }
 
 func TestConservationMode(t *testing.T) {
-	driver := system.ConservationMode
+	driver := &system.ConservationMode
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestFNLock(t *testing.T) {
-	driver := system.FNLock
+	driver := &system.FNLock
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestPowerMode(t *testing.T) {
-	driver := system.PowerMode
+	driver := &system.PowerMode
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestRapidCharge(t *testing.T) {
-	driver := system.RapidCharge
+	driver := &system.RapidCharge
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestTouchPad(t *testing.T) {
-	driver := system.TouchPad
+	driver := &system.TouchPad
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestUSBCharging(t *testing.T) {
-	driver := system.USBCharging
+	driver := &system.USBCharging
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
 
 func TestWinKey(t *testing.T) {
-	driver := system.WinKey
+	driver := &system.WinKey
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 
-	fmt.Printf("Toggling %v\n", driver.File)
-	driver.ToggleDriverMode()
+	testDriverFunctionToggle(driver)
 
-	if driver.GetStatus(&driver) == "" {
-		t.Errorf("  failed to retrieve current %v status", driver.File)
-		return
-	}
-	fmt.Printf("Current %v Status: %v\n", driver.File, driver.GetStatus(&driver))
+	testDriverFunctionGetStatus(t, driver)
 }
