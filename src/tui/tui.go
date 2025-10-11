@@ -23,13 +23,13 @@ var (
 		"FNLock":              &system.FNLock,
 		"Hybrid Mode":         &system.HybridMode,
 		"Lock Fan Controller": &system.LockFanController,
-		"Max Fan Speed":       &system.MaxFanSpeed,
-		"OverDrive":           &system.OverDrive,
-		"PowerMode":           &system.PowerMode,
-		"Rapid Charging":      &system.RapidCharge,
-		"TouchPad":            &system.TouchPad,
-		"USB Charging":        &system.USBCharging,
-		"WinKey":              &system.WinKey,
+		"Max Fan Speed (PowerMode must be set to 'custom')": &system.MaxFanSpeed,
+		"OverDrive":      &system.OverDrive,
+		"PowerMode":      &system.PowerMode,
+		"Rapid Charging": &system.RapidCharge,
+		"TouchPad":       &system.TouchPad,
+		"USB Charging":   &system.USBCharging,
+		"WinKey":         &system.WinKey,
 	}
 )
 
