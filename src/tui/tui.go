@@ -94,7 +94,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.WindowSizeMsg:
 		m.terminalHeight = msg.Height
 		m.terminalWidth = msg.Width
-		m.list.SetHeight(m.terminalHeight - (lipgloss.Height(styles.TitleStyle.Render(title)) + lipgloss.Height("\n") + lipgloss.Height(panes.StatusPane(m.terminalWidth))))
+		m.list.SetHeight(m.terminalHeight - (lipgloss.Height(styles.TitleStyle.Render(title)) + lipgloss.Height("\n") + lipgloss.Height(panes.StatusPane())))
 		m.list.SetWidth(m.terminalWidth)
 		return m, nil
 
@@ -127,7 +127,7 @@ func (m model) View() string {
 		return styles.QuitTextStyle.Render(fmt.Sprintf("Enabling/Disabling -> %s", m.choice))
 	}
 
-	return lipgloss.JoinVertical(lipgloss.Left, styles.TitleStyle.Render(title), "\n", panes.StatusPane(m.terminalWidth), m.list.View())
+	return lipgloss.JoinVertical(lipgloss.Left, styles.TitleStyle.Render(title), "\n", panes.StatusPane(), m.list.View())
 }
 
 func Run() {

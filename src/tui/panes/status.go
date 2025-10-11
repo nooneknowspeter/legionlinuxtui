@@ -9,7 +9,7 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-func StatusPane(terminalWidth int) string {
+func StatusPane() string {
 	systemInformation := components.StatusComponent(
 		"System Information 󰌢 ",
 		fmt.Sprintf("Host Name | %s", system.System.Name),
