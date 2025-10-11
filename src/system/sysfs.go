@@ -7,19 +7,13 @@ import (
 )
 
 type (
+	// DriverModuleFunction -> available functions in the legionlinux drivers
 	DriverModuleFunction struct {
 		File          string
 		SysFSLocation string
-		GetStatus     func(s *DriverModuleFunction) string
-		UpdateStatus  func(s *DriverModuleFunction, value string)
-		DriverModes   map[int]string
+		DriverStates  map[int]string
 	}
 )
-
-var DEFAULTDRIVERMODES = map[int]string{
-	0: "disabled",
-	1: "enabled",
-}
 
 func (s *DriverModuleFunction) readValue() int {
 	value, err := strconv.Atoi(helpers.ReadFile(s.SysFSLocation + s.File))
@@ -34,146 +28,122 @@ func (s *DriverModuleFunction) writeValue(value string) {
 	helpers.WriteToFile(s.SysFSLocation+s.File, value)
 }
 
-// function implementation of iterator style pattern
-// loop through modes in cycle; next
-// currentMode value must be indexed at 0
-func (s *DriverModuleFunction) toggleIterator(currentMode int, numberOfModes int) int {
-	return ((1 + currentMode) % numberOfModes)
-}
+// ToggleDriverState -> cycle through driver states
+// loop through in cycle; next
+func (s *DriverModuleFunction) ToggleDriverState() {
+	currentState := s.readValue()
+	numberOfStates := len(s.DriverStates)
+	nextState := ((currentState + 1) % numberOfStates)
 
-func (s *DriverModuleFunction) ToggleDriverMode() {
-	currentMode := s.readValue()
-	numberOfModes := len(s.DriverModes)
-	var nextMode int
-
-	if numberOfModes > 2 {
-		nextMode = s.toggleIterator(currentMode-1, numberOfModes)
-	} else {
-		nextMode = s.toggleIterator(currentMode, numberOfModes)
+	// custom power mode
+	if numberOfStates > 2 && currentState == 3 {
+		nextState = 255
 	}
 
-	s.writeValue(fmt.Sprintf("%v\n", nextMode))
-	fmt.Printf("toggled %v: %v -> %v\n", s.File, s.DriverModes[currentMode], s.DriverModes[s.readValue()])
+	if numberOfStates > 2 && nextState == 0 {
+		nextState++
+	}
+
+	s.writeValue(fmt.Sprintf("%v\n", nextState))
+	fmt.Printf("toggled %v: %v -> %v\n", s.File, s.DriverStates[currentState], s.DriverStates[s.readValue()])
+}
+
+// GetDriverFunctionState -> get driver function current state from sysfs
+func (s *DriverModuleFunction) GetDriverFunctionState() string {
+	return s.DriverStates[s.readValue()]
+}
+
+// UpdateDriverFunction -> update driver function by value
+func (s *DriverModuleFunction) UpdateDriverFunction(value string) {
+	s.writeValue(value)
 }
 
 var (
-	CameraPower DriverModuleFunction = DriverModuleFunction{
-		File:          "camera_power",
-		SysFSLocation: IDEASYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+	// DEFAULTDRIVERSTATES -> default driver function states; on and off
+	DEFAULTDRIVERSTATES = map[int]string{
+		0: "disabled",
+		1: "enabled",
 	}
 
-	ConservationMode DriverModuleFunction = DriverModuleFunction{
+	// ConservationMode ->
+	ConservationMode = DriverModuleFunction{
 		File:          "conservation_mode",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	FNLock DriverModuleFunction = DriverModuleFunction{
+	// FNLock ->
+	FNLock = DriverModuleFunction{
 		File:          "fn_lock",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	GSync DriverModuleFunction = DriverModuleFunction{
+	// HybridMode -> gsync
+	HybridMode = DriverModuleFunction{
 		File:          "gsync",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	IGPUMode DriverModuleFunction = DriverModuleFunction{
-		File:          "igpumode",
-		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-	}
-
-	LockFanController DriverModuleFunction = DriverModuleFunction{
+	// LockFanController ->
+	LockFanController = DriverModuleFunction{
 		File:          "lockfancontroller",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	MaxFanSpeedToggle DriverModuleFunction = DriverModuleFunction{
-		File:          "fan_maxspeed",
+	// MaxFanSpeed -> only works when power mode is in custom
+	MaxFanSpeed = DriverModuleFunction{
+		File:          "fan_fullspeed",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	OverDrive DriverModuleFunction = DriverModuleFunction{
+	// OverDrive ->
+	OverDrive = DriverModuleFunction{
 		File:          "overdrive",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	PowerMode DriverModuleFunction = DriverModuleFunction{
+	// PowerMode ->
+	PowerMode = DriverModuleFunction{
 		File:          "powermode",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: map[int]string{
-			1: "quiet",
-			2: "balanced",
-			3: "performance",
+		DriverStates: map[int]string{
+			1:   "quiet",
+			2:   "balanced",
+			3:   "performance",
+			255: "custom",
 		},
 	}
 
-	RapidCharge DriverModuleFunction = DriverModuleFunction{
+	// RapidCharge ->
+	RapidCharge = DriverModuleFunction{
 		File:          "rapidcharge",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	TouchPad DriverModuleFunction = DriverModuleFunction{
+	// TouchPad ->
+	TouchPad = DriverModuleFunction{
 		File:          "touchpad",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	USBCharging DriverModuleFunction = DriverModuleFunction{
+	// USBCharging ->
+	USBCharging = DriverModuleFunction{
 		File:          "usb_charging",
 		SysFSLocation: IDEASYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 
-	WinKey DriverModuleFunction = DriverModuleFunction{
+	// WinKey ->
+	WinKey = DriverModuleFunction{
 		File:          "winkey",
 		SysFSLocation: LEGIONSYSTEMDRIVERPATH,
-		GetStatus: func(s *DriverModuleFunction) string {
-			return s.DriverModes[s.readValue()]
-		},
-		DriverModes: DEFAULTDRIVERMODES,
+		DriverStates:  DEFAULTDRIVERSTATES,
 	}
 )
