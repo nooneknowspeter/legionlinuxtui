@@ -4,13 +4,12 @@ A terminal user interface for controlling Lenovo Legion laptops.
 
 It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux).
 
-<!-- ![screenshot](./design/export/mainScreen.jpg) -->
+<!-- TODO: demonstration -->
 
 ## Features
 
 - Sensor information display (100ms update)
 - Capability toggles; convservative mode, power mode, ...
-- Logs
 - Additional information
 
 ## Installation
@@ -60,10 +59,6 @@ nix develop
 > [!NOTE]
 >
 > A [`Makefile`](./Makefile) is avaiable with quick commands.
->
-> `make` - `go run .`
->
-> `make build` - `go build -o build/`
 
 > [!NOTE]
 >
@@ -97,6 +92,10 @@ I will gladly appreciate and accept any PRs and issues that help the project.
 >
 > A [`treefmt.toml`](./treefmt.toml) is available in the repository.
 
+> [!NOTE]
+>
+> Use the `make lint` command in [`Makefile`](./Makefile) for linting.
+
 CI/CD is available, PRs will get checked for any errors before merging.
 
 ### Feedback
@@ -106,7 +105,7 @@ They will help the project making it stable and practical as possible for others
 
 ### TODO
 
-I keep track of the project tasks [here](./TODO.md).
+I keep track of the project tasks [here](./TODO.md) as well as in the codebase; `TODO:`.
 
 ## Resources
 
