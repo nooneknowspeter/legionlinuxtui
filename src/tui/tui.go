@@ -109,7 +109,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if ok {
 				m.choice = string(i)
 				driverFunctions[m.choice].ToggleDriverState()
+				_ = tea.ClearScreen()
 			}
+
 			// return m, tea.Quit
 		}
 
@@ -123,9 +125,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
-	if m.choice != "" {
-		return styles.QuitTextStyle.Render(fmt.Sprintf("Enabling/Disabling -> %s", m.choice))
-	}
+	// if m.choice != "" {
+	// 	return styles.QuitTextStyle.Render(fmt.Sprintf("Enabling/Disabling -> %s", m.choice))
+	// }
 
 	return lipgloss.JoinVertical(lipgloss.Left, styles.TitleStyle.Render(title), "\n", panes.StatusPane(), m.list.View())
 }
