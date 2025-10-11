@@ -45,7 +45,7 @@ func (s *DriverModuleFunction) ToggleDriverState() {
 	}
 
 	s.writeValue(fmt.Sprintf("%v\n", nextState))
-	fmt.Printf("toggled %v: %v -> %v\n", s.File, s.DriverStates[currentState], s.DriverStates[s.readValue()])
+	// fmt.Printf("toggled %v: %v -> %v\n", s.File, s.DriverStates[currentState], s.DriverStates[s.readValue()])
 }
 
 // GetDriverFunctionState -> get driver function current state from sysfs
