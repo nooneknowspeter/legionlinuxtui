@@ -10,7 +10,6 @@ tests:
 	go test ./src/... -v
 lint:
 	treefmt --ci --config-file treefmt.lint.toml
-	revive ./src/...
 	golangci-lint run
 format:
 	treefmt

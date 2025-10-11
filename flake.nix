@@ -22,7 +22,6 @@
               go
               golangci-lint
               gotools
-              revive
 
               gnumake
               treefmt

@@ -51,12 +51,6 @@ includes = [
 ]
 options = ["--check"]
 
-[formatter.revive]
-command = "revive"
-excludes = []
-includes = ["*.go"]
-options = ["src/..."]
-
 [formatter.taplo]
 command = "taplo"
 excludes = []
