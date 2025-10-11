@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	lengthOfGraph    int = 20
-	temperatureQueue     = make([]float64, lengthOfGraph)
+	lengthOfGraph    = 20
+	temperatureQueue = make([]float64, lengthOfGraph)
 )
 
 func StreamlineTemperatureChart(temperature string) string {

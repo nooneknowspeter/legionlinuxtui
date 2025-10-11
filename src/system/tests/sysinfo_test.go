@@ -8,11 +8,11 @@ import (
 
 func TestBatteryInformation(t *testing.T) {
 	var (
-		batteryName           string = system.Battery.Name()
-		batteryCapacity       string = system.Battery.Capacity()
-		batteryVoltage        string = system.Battery.Voltage()
-		batteryChargingStatus string = system.Battery.ChargingStatus()
-		batteryCycleCount     string = system.Battery.CycleCount()
+		batteryName           = system.Battery.Name()
+		batteryCapacity       = system.Battery.Capacity()
+		batteryVoltage        = system.Battery.Voltage()
+		batteryChargingStatus = system.Battery.ChargingStatus()
+		batteryCycleCount     = system.Battery.CycleCount()
 	)
 
 	if batteryName == "" || batteryCapacity == "" || batteryVoltage == "" || batteryChargingStatus == "" || batteryCycleCount == "" {
@@ -29,8 +29,8 @@ func TestBatteryInformation(t *testing.T) {
 
 func TestCPUInformation(t *testing.T) {
 	var (
-		cpuName        string = system.CPU.Name()
-		cpuTemperature string = system.CPU.Temperature()
+		cpuName        = system.CPU.Name()
+		cpuTemperature = system.CPU.Temperature()
 	)
 
 	if cpuName == "" || cpuTemperature == "" {
@@ -44,8 +44,8 @@ func TestCPUInformation(t *testing.T) {
 
 func TestGPUInformation(t *testing.T) {
 	var (
-		gpuName        string = system.GPU.Name()
-		gpuTemperature string = system.GPU.Temperature()
+		gpuName        = system.GPU.Name()
+		gpuTemperature = system.GPU.Temperature()
 	)
 
 	if gpuName == "" || gpuTemperature == "" {
@@ -59,10 +59,10 @@ func TestGPUInformation(t *testing.T) {
 
 func TestSystemInformation(t *testing.T) {
 	var (
-		hostName     string = system.System.Name
-		biosVersion  string = system.System.BiosVersion
-		family       string = system.System.Family
-		systemVendor string = system.System.Vendor
+		hostName     = system.System.Name
+		biosVersion  = system.System.BiosVersion
+		family       = system.System.Family
+		systemVendor = system.System.Vendor
 	)
 
 	if hostName == "" || biosVersion == "" || family == "" || systemVendor == "" {

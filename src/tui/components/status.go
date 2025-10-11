@@ -7,13 +7,11 @@ import (
 func StatusComponent(title string, information ...string) string {
 	title = lipgloss.NewStyle().Bold(true).Render(title)
 
-	var componentContent []string = []string{}
+	var componentContent = []string{}
 
 	componentContent = append(componentContent, title)
 
-	for _, v := range information {
-		componentContent = append(componentContent, v)
-	}
+	componentContent = append(componentContent, information...)
 
 	return lipgloss.NewStyle().Render(lipgloss.JoinVertical(lipgloss.Top, componentContent...))
 }

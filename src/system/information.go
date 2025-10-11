@@ -40,14 +40,15 @@ type (
 )
 
 var (
-	System systemInformation = systemInformation{
+	System = systemInformation{
 		Name:        helpers.ReadFile("/etc/hostname"),
 		BiosVersion: helpers.ReadFile(DEVICEINFORMATIONPATH + "bios_version"),
 		Family:      helpers.ReadFile(DEVICEINFORMATIONPATH + "product_family"),
 		Vendor:      helpers.ReadFile(DEVICEINFORMATIONPATH + "sys_vendor"),
 	}
 
-	CPU cpuSensorInformation = cpuSensorInformation{
+	// CPU -> cpu information from `lscpu` command
+	CPU = cpuSensorInformation{
 		Name: func() string {
 			stdout, err := exec.Command("lscpu", "-e=ModelName", "-J").Output()
 			if err != nil {
@@ -73,7 +74,8 @@ var (
 		},
 	}
 
-	GPU gpuSensorInformation = gpuSensorInformation{
+	// GPU -> gpu information from `nvidia-smi` command
+	GPU = gpuSensorInformation{
 		Name: func() string {
 			stdout, err := exec.Command("nvidia-smi", "--query-gpu=name", "--format=csv,noheader").Output()
 			if err != nil {
@@ -93,7 +95,7 @@ var (
 		},
 	}
 
-	Battery batterySensorInformation = batterySensorInformation{
+	Battery = batterySensorInformation{
 		Name: func() string {
 			file := helpers.ReadFile(BATTERYINFORMATIONPATH + "model_name")
 
@@ -127,7 +129,7 @@ var (
 		},
 	}
 
-	Fan1 fanSensorInformation = fanSensorInformation{
+	Fan1 = fanSensorInformation{
 		CurrentSpeed: func() string {
 			file := helpers.ReadFile(FANINFORMATIONPATH + "fan1_input")
 
@@ -135,7 +137,7 @@ var (
 		},
 	}
 
-	Fan2 fanSensorInformation = fanSensorInformation{
+	Fan2 = fanSensorInformation{
 		CurrentSpeed: func() string {
 			file := helpers.ReadFile(FANINFORMATIONPATH + "fan2_input")
 

@@ -7,14 +7,14 @@ import (
 )
 
 var (
-	testFile string = "test_file"
+	testFile = "test_file"
 )
 
 func TestRW(t *testing.T) {
-	var expectedContents string = ""
+	var expectedContents string
 	helpers.WriteToFile(testFile, expectedContents) // clear file
 
-	var file string = helpers.ReadFile(testFile)
+	file := helpers.ReadFile(testFile)
 
 	fmt.Printf("File Contents: %v\n", file)
 	fmt.Printf("Expected Contents: %v\n", expectedContents)
