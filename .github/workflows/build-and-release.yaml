@@ -1,15 +1,24 @@
-name: Build Binaries
+name: Build and Release Binaries
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_run:
+    workflows:
+      - Changlog
   workflow_dispatch:
+
+env:
+  BINARY-PATH: build/legionlinuxtui
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v4
+
       - uses: cachix/install-nix-action@v31
 
       - name: build
@@ -20,15 +29,16 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: legionlinuxtui
-          path: build/legionlinuxtui
+          path: ${{ env.BINARY-PATH }}
 
       - name: Upload to GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          body_path: ${{ github.workspace }}-CHANGELOG.md
           draft: false
           prerelease: false
-          files: build/legionlinuxtui
+          files: ${{ env.BINARY-PATH }}
           generate_release_notes: true
+          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_KEY }}
