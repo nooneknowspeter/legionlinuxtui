@@ -1,9 +1,9 @@
 name: Build and Release Binaries
 
 on:
-  workflow_run:
-    workflows:
-      - Changlog
+  push:
+    tags:
+      - "**"
   workflow_dispatch:
 
 env:
@@ -16,10 +16,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_API_KEY }}
+          fetch-depth: 0
 
       - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GH_API_KEY }}
 
       - name: build
         run: |
@@ -31,10 +35,14 @@ jobs:
           name: legionlinuxtui
           path: ${{ env.BINARY-PATH }}
 
+      - name: generate changelog
+        run: |
+          nix develop -c git-cliff --current > CHANGELOG.md
+
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          body_path: ${{ github.workspace }}-CHANGELOG.md
+          body_path: CHANGELOG.md
           draft: false
           prerelease: false
           files: ${{ env.BINARY-PATH }}
