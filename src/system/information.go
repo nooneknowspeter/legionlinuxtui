@@ -66,11 +66,7 @@ var (
 		},
 
 		Temperature: func() string {
-			file := helpers.ReadFile(CPUINFORMATIONPATH + "temp1_input")
-
-			cpuTemperature := fmt.Sprintf("%v", string(file[0:2]))
-
-			return cpuTemperature
+			return helpers.SensorInformation("CPU Temperature", "temp1_input")
 		},
 	}
 
@@ -131,17 +127,13 @@ var (
 
 	Fan1 = fanSensorInformation{
 		CurrentSpeed: func() string {
-			file := helpers.ReadFile(FANINFORMATIONPATH + "fan1_input")
-
-			return file
+			return helpers.SensorInformation("Fan 1", "fan1_input")
 		},
 	}
 
 	Fan2 = fanSensorInformation{
 		CurrentSpeed: func() string {
-			file := helpers.ReadFile(FANINFORMATIONPATH + "fan2_input")
-
-			return file
+			return helpers.SensorInformation("Fan 2", "fan2_input")
 		},
 	}
 )
