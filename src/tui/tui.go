@@ -35,7 +35,7 @@ var (
 
 type item string
 
-func (i item) FilterValue() string { return "" }
+func (i item) FilterValue() string { return string(i) }
 
 type itemDelegate struct{}
 
@@ -145,7 +145,7 @@ func Run() {
 	l := list.New(items, itemDelegate{}, defaultWidth, listHeight)
 	l.Title = ""
 	l.SetShowStatusBar(true)
-	l.SetFilteringEnabled(false)
+	l.SetFilteringEnabled(true)
 	l.Styles.Title = styles.TitleStyle
 	l.Styles.PaginationStyle = styles.PaginationStyle
 	l.Styles.HelpStyle = styles.HelpStyle
