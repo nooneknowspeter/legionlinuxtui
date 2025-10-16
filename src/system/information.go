@@ -52,7 +52,7 @@ var (
 		Name: func() string {
 			stdout, err := exec.Command("lscpu", "-e=ModelName", "-J").Output()
 			if err != nil {
-				fmt.Printf("command lscpu not found %v", err)
+				fmt.Printf("command 'lscpu' not found %v", err)
 			}
 
 			var data map[string]any
@@ -79,7 +79,7 @@ var (
 		Name: func() string {
 			stdout, err := exec.Command("nvidia-smi", "--query-gpu=name", "--format=csv,noheader").Output()
 			if err != nil {
-				fmt.Printf("command nvidia-smi not found: %v", err)
+				fmt.Printf("command 'nvidia-smi' not found: %v", err)
 			}
 
 			return strings.Split(string(stdout), "\n")[0]
