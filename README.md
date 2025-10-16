@@ -1,5 +1,10 @@
 # legionlinuxtui
 
+> [!NOTE]
+>
+> Ensure that the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux)
+> and [`lm_sensors`](https://github.com/lm-sensors/lm-sensors) are installed properly on your system.
+
 A terminal user interface for controlling Lenovo Legion laptops.
 
 It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux).
@@ -16,11 +21,6 @@ It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/Lenov
 
 ## Installation
 
-> [!NOTE]
->
-> Ensure that the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux)
-> are installed properly on your system.
-
 ### NixOS
 
 Soon.
@@ -29,12 +29,7 @@ Soon.
 
 > [!NOTE]
 >
-> Ensure that the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/LenovoLegionLinux)
-> are installed properly on your system.
-
-> [!NOTE]
->
-> Ensure Go 1.24.5 is installed.
+> Ensure Go >= 1.24.4 is installed.
 
 #### Nix
 
