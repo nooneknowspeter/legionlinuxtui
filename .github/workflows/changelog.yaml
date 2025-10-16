@@ -1,0 +1,38 @@
+name: Changelog
+
+on:
+  push:
+    tags:
+      - "**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_API_KEY }}
+          fetch-depth: 0
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GH_API_KEY }}
+
+      - name: generate changelog
+        run: |
+          nix develop -c git-cliff > CHANGELOG.md
+          nix develop -c treefmt
+
+      - name: push
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GH_API_KEY }}
+          push-branch: "main"
+          commit-message: "docs: update CHANGELOG.md"
+          files: CHANGELOG.md
+          name: github-actions[bot]
+          email: github-actions[bot]@users.noreply.github.com
