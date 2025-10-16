@@ -26,6 +26,7 @@
               gnumake
               treefmt
 
+              git-cliff
               mdformat
               nixfmt-rfc-style
               prettier
