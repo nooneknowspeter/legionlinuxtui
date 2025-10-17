@@ -4,10 +4,14 @@
 
 - Update CHANGELOG.md
 - Add LICENSE
+- Update CHANGELOG.md
 
 ### Miscellaneous Tasks
 
 - _(nix)_ Update default devshell packages
+- Go mod vendor
+- Update treefmt config
+- Go mod vendor
 - Release 0.1.2
 
 ## [0.1.1] - 2025-10-17
