@@ -1,3 +1,15 @@
+## [0.1.2] - 2025-10-17
+
+### Documentation
+
+- Update CHANGELOG.md
+- Add LICENSE
+
+### Miscellaneous Tasks
+
+- _(nix)_ Update default devshell packages
+- Release 0.1.2
+
 ## [0.1.1] - 2025-10-17
 
 ### Features
