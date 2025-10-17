@@ -23,10 +23,11 @@
               golangci-lint
               gotools
 
+              git-cliff
               gnumake
               treefmt
+              valgrind
 
-              git-cliff
               mdformat
               nixfmt-rfc-style
               prettier
