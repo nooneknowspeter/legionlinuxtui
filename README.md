@@ -11,7 +11,7 @@ It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/Lenov
 
 [![demo1](https://asciinema.org/a/S2jHeMt6bLGDgOlsIMJwZH7PU.svg)](https://asciinema.org/a/S2jHeMt6bLGDgOlsIMJwZH7PU)
 
-![demo2](./public/demo2.gif)
+![demo2](./public/legionlinuxtuidemo.gif)
 
 ## Features
 
