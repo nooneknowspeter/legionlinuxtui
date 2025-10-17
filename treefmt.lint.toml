@@ -1,36 +1,36 @@
 [formatter.gofmt]
 command = "gofmt"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["*.go"]
 options = ["-l"]
 
 [formatter.goimports]
 command = "goimports"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["*.go"]
 options = ["-l"]
 
 [formatter.golangci-lint]
 command = "golangci-lint"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["src/..."]
 options = ["run"]
 
 [formatter.mdformat]
 command = "mdformat"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["*.md"]
 options = ["--check"]
 
 [formatter.nixfmt-rfc-style]
 command = "nixfmt"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["*.nix"]
 options = ["--check"]
 
 [formatter.prettier]
 command = "prettier"
-excludes = []
+excludes = ["vendor/*"]
 includes = [
   "*.cjs",
   "*.css",
@@ -53,6 +53,6 @@ options = ["--check"]
 
 [formatter.taplo]
 command = "taplo"
-excludes = []
+excludes = ["vendor/*"]
 includes = ["*.toml"]
 options = ["lint"]
