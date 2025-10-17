@@ -3,9 +3,11 @@
   "nodescription": true
 }
 -->
+
 <img title="Logo" src="./examples/_images/logo.png" width="961">
 
 <!-- template:begin:header -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
 
 <p align="center">
@@ -16,18 +18,15 @@
     <img title="Last commit" src="https://img.shields.io/github/last-commit/lrstanley/bubblezone?style=flat-square">
   </a>
 
-
-  <a href="https://github.com/lrstanley/bubblezone/actions?query=workflow%3Atest+event%3Apush">
+<a href="https://github.com/lrstanley/bubblezone/actions?query=workflow%3Atest+event%3Apush">
     <img title="GitHub Workflow Status (test @ master)" src="https://img.shields.io/github/actions/workflow/status/lrstanley/bubblezone/test.yml?branch=master&label=test&style=flat-square">
   </a>
 
-
-
-  <a href="https://codecov.io/gh/lrstanley/bubblezone">
+<a href="https://codecov.io/gh/lrstanley/bubblezone">
     <img title="Code Coverage" src="https://img.shields.io/codecov/c/github/lrstanley/bubblezone/master?style=flat-square">
   </a>
 
-  <a href="https://pkg.go.dev/github.com/lrstanley/bubblezone">
+<a href="https://pkg.go.dev/github.com/lrstanley/bubblezone">
     <img title="Go Documentation" src="https://pkg.go.dev/badge/github.com/lrstanley/bubblezone?style=flat-square">
   </a>
   <a href="https://goreportcard.com/report/github.com/lrstanley/bubblezone">
@@ -52,25 +51,28 @@
 <!-- template:end:header -->
 
 <!-- template:begin:toc -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
+
 ## :link: Table of Contents
 
-  - [Problem](#x-problem)
-  - [Solution](#heavy_check_mark-solution)
-  - [Features](#sparkles-features)
-  - [Usage](#gear-usage)
-  - [Examples](#clap-examples)
+- [Problem](#x-problem)
+- [Solution](#heavy_check_mark-solution)
+- [Features](#sparkles-features)
+- [Usage](#gear-usage)
+- [Examples](#clap-examples)
     - [List example](#list-example)
     - [Lipgloss full example](#lipgloss-full-example)
-  - [Tips](#memo-tips)
+- [Tips](#memo-tips)
     - [Overlapping markers](#overlapping-markers)
     - [Use lipgloss.Width](#use-lipglosswidth)
     - [MaxHeight and MaxWidth](#maxheight-and-maxwidth)
     - [Only scan at the root model](#only-scan-at-the-root-model)
     - [Organic shapes](#organic-shapes)
-  - [Support &amp; Assistance](#raising_hand_man-support--assistance)
-  - [Contributing](#handshake-contributing)
-  - [License](#balance_scale-license)
+- [Support & Assistance](#raising_hand_man-support--assistance)
+- [Contributing](#handshake-contributing)
+- [License](#balance_scale-license)
+
 <!-- template:end:toc -->
 
 ## :x: Problem
@@ -107,7 +109,7 @@ where the mouse was being clicked, and which component was under the mouse:
 
 ## :sparkles: Features
 
-- :heavy_check_mark: It's **_fast_** -- given it has to process this information for every render, I
+- :heavy*check_mark: It's \*\*\_fast*\*\* -- given it has to process this information for every render, I
   tried to focus on performance where possible. If you see where improvements can
   be made, let me know!
 - :heavy_check_mark: It doesn't impact width calculations when using `lipgloss.Width()` (if you're
@@ -115,7 +117,7 @@ where the mouse was being clicked, and which component was under the mouse:
 - :heavy_check_mark: It's simple -- easily determine offset or if an event was within the bounds of
   a zone.
 - :heavy_check_mark: Want the mouse event position relative to the component? Easy!
-- :heavy_check_mark: Provides an _optional_ global manager, when you have full access to all components,
+- :heavy*check_mark: Provides an \_optional* global manager, when you have full access to all components,
   so you don't have to inject it as a dependency to all components.
 
 ---
@@ -123,10 +125,13 @@ where the mouse was being clicked, and which component was under the mouse:
 ## :gear: Usage
 
 <!-- template:begin:goget -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
+
 ```console
 go get -u github.com/lrstanley/bubblezone@latest
 ```
+
 <!-- template:end:goget -->
 
 BubbleZone supports either a global zone manager (initialized via `NewGlobal()`),
@@ -295,31 +300,39 @@ Example:
 ---
 
 <!-- template:begin:support -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
+
 ## :raising_hand_man: Support & Assistance
 
-* :heart: Please review the [Code of Conduct](.github/CODE_OF_CONDUCT.md) for
-     guidelines on ensuring everyone has the best experience interacting with
-     the community.
-* :raising_hand_man: Take a look at the [support](.github/SUPPORT.md) document on
-     guidelines for tips on how to ask the right questions.
-* :lady_beetle: For all features/bugs/issues/questions/etc, [head over here](https://github.com/lrstanley/bubblezone/issues/new/choose).
+- :heart: Please review the [Code of Conduct](.github/CODE_OF_CONDUCT.md) for
+  guidelines on ensuring everyone has the best experience interacting with
+  the community.
+- :raising_hand_man: Take a look at the [support](.github/SUPPORT.md) document on
+  guidelines for tips on how to ask the right questions.
+- :lady_beetle: For all features/bugs/issues/questions/etc, [head over here](https://github.com/lrstanley/bubblezone/issues/new/choose).
+
 <!-- template:end:support -->
 
 <!-- template:begin:contributing -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
+
 ## :handshake: Contributing
 
-* :heart: Please review the [Code of Conduct](.github/CODE_OF_CONDUCT.md) for guidelines
-     on ensuring everyone has the best experience interacting with the
-    community.
-* :clipboard: Please review the [contributing](.github/CONTRIBUTING.md) doc for submitting
-     issues/a guide on submitting pull requests and helping out.
-* :old_key: For anything security related, please review this repositories [security policy](https://github.com/lrstanley/bubblezone/security/policy).
+- :heart: Please review the [Code of Conduct](.github/CODE_OF_CONDUCT.md) for guidelines
+  on ensuring everyone has the best experience interacting with the
+  community.
+- :clipboard: Please review the [contributing](.github/CONTRIBUTING.md) doc for submitting
+  issues/a guide on submitting pull requests and helping out.
+- :old_key: For anything security related, please review this repositories [security policy](https://github.com/lrstanley/bubblezone/security/policy).
+
 <!-- template:end:contributing -->
 
 <!-- template:begin:license -->
+
 <!-- do not edit anything in this "template" block, its auto-generated -->
+
 ## :balance_scale: License
 
 ```
@@ -347,4 +360,5 @@ SOFTWARE.
 ```
 
 _Also located [here](LICENSE)_
+
 <!-- template:end:license -->

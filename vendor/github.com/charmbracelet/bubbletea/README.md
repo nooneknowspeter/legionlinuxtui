@@ -24,14 +24,12 @@ Bubble Tea is in use in production and includes a number of features and
 performance optimizations we’ve added along the way. Among those is
 a framerate-based renderer, mouse support, focus reporting and more.
 
-To get started, see the tutorial below, the [examples][examples], the
-[docs][docs], the [video tutorials][youtube] and some common [resources](#libraries-we-use-with-bubble-tea).
-
-[youtube]: https://charm.sh/yt
+To get started, see the tutorial below, the [examples], the
+[docs], the [video tutorials][youtube] and some common [resources](#libraries-we-use-with-bubble-tea).
 
 ## By the way
 
-Be sure to check out [Bubbles][bubbles], a library of common UI components for Bubble Tea.
+Be sure to check out [Bubbles], a library of common UI components for Bubble Tea.
 
 <p>
     <a href="https://github.com/charmbracelet/bubbles"><img src="https://stuff.charm.sh/bubbles/bubbles-badge.png" width="174" alt="Bubbles Badge"></a>&nbsp;&nbsp;
@@ -50,9 +48,6 @@ This tutorial assumes you have a working knowledge of Go.
 
 By the way, the non-annotated source code for this program is available
 [on GitHub][tut-source].
-
-[elm]: https://guide.elm-lang.org/architecture/
-[tut-source]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/basics
 
 ### Enough! Let's get to it.
 
@@ -261,10 +256,6 @@ look at the [Command Tutorial][cmd]. It's pretty simple.
 There are also several [Bubble Tea examples][examples] available and, of course,
 there are [Go Docs][docs].
 
-[cmd]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/commands/
-[examples]: https://github.com/charmbracelet/bubbletea/tree/main/examples
-[docs]: https://pkg.go.dev/github.com/charmbracelet/bubbletea?tab=doc
-
 ## Debugging
 
 ### Debugging with Delve
@@ -312,17 +303,11 @@ your program in another window.
 
 ## Libraries we use with Bubble Tea
 
-- [Bubbles][bubbles]: Common Bubble Tea components such as text inputs, viewports, spinners and so on
+- [Bubbles]: Common Bubble Tea components such as text inputs, viewports, spinners and so on
 - [Lip Gloss][lipgloss]: Style, format and layout tools for terminal applications
-- [Harmonica][harmonica]: A spring animation library for smooth, natural motion
-- [BubbleZone][bubblezone]: Easy mouse event tracking for Bubble Tea components
-- [ntcharts][ntcharts]: A terminal charting library built for Bubble Tea and [Lip Gloss][lipgloss]
-
-[bubbles]: https://github.com/charmbracelet/bubbles
-[lipgloss]: https://github.com/charmbracelet/lipgloss
-[harmonica]: https://github.com/charmbracelet/harmonica
-[bubblezone]: https://github.com/lrstanley/bubblezone
-[ntcharts]: https://github.com/NimbleMarkets/ntcharts
+- [Harmonica]: A spring animation library for smooth, natural motion
+- [BubbleZone]: Easy mouse event tracking for Bubble Tea components
+- [ntcharts]: A terminal charting library built for Bubble Tea and [Lip Gloss][lipgloss]
 
 ## Bubble Tea in the Wild
 
@@ -365,8 +350,6 @@ welcome!
 
 See [contributing][contribute].
 
-[contribute]: https://github.com/charmbracelet/bubbletea/contribute
-
 ## Feedback
 
 We’d love to hear your thoughts on this project. Feel free to drop us a note!
@@ -382,11 +365,6 @@ Czaplicki et alia and the excellent [go-tea][gotea] by TJ Holowaychuk. It’s
 inspired by the many great [_Zeichenorientierte Benutzerschnittstellen_][zb]
 of days past.
 
-[elm]: https://guide.elm-lang.org/architecture/
-[gotea]: https://github.com/tj/go-tea
-[zb]: https://de.wikipedia.org/wiki/Zeichenorientierte_Benutzerschnittstelle
-[community]: https://github.com/charm-and-friends/charm-in-the-wild
-
 ## License
 
 [MIT](https://github.com/charmbracelet/bubbletea/raw/main/LICENSE)
@@ -398,3 +376,19 @@ Part of [Charm](https://charm.sh).
 <a href="https://charm.sh/"><img alt="The Charm logo" src="https://stuff.charm.sh/charm-badge.jpg" width="400"></a>
 
 Charm热爱开源 • Charm loves open source • نحنُ نحب المصادر المفتوحة
+
+[bubbles]: https://github.com/charmbracelet/bubbles
+[bubblezone]: https://github.com/lrstanley/bubblezone
+[cmd]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/commands/
+[community]: https://github.com/charm-and-friends/charm-in-the-wild
+[contribute]: https://github.com/charmbracelet/bubbletea/contribute
+[docs]: https://pkg.go.dev/github.com/charmbracelet/bubbletea?tab=doc
+[elm]: https://guide.elm-lang.org/architecture/
+[examples]: https://github.com/charmbracelet/bubbletea/tree/main/examples
+[gotea]: https://github.com/tj/go-tea
+[harmonica]: https://github.com/charmbracelet/harmonica
+[lipgloss]: https://github.com/charmbracelet/lipgloss
+[ntcharts]: https://github.com/NimbleMarkets/ntcharts
+[tut-source]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/basics
+[youtube]: https://charm.sh/yt
+[zb]: https://de.wikipedia.org/wiki/Zeichenorientierte_Benutzerschnittstelle

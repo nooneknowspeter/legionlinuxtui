@@ -25,7 +25,7 @@ type DefaultItem interface {
 }
 ```
 
-You can see a working example in our [Kancli][kancli] project built
+You can see a working example in our [Kancli] project built
 explicitly for a tutorial on lists and composite views in Bubble Tea.
 
 [VIDEO](https://youtu.be/ZA93qgdLUzM)
@@ -33,7 +33,7 @@ explicitly for a tutorial on lists and composite views in Bubble Tea.
 ## Customizing Styles
 
 Rendering (and behavior) for list items is done via the
-[`ItemDelegate`][itemDelegate]
+[`ItemDelegate`][itemdelegate]
 interface. It can be a little confusing at first, but it allows the list to be
 very flexible and powerful.
 
@@ -58,14 +58,14 @@ l := list.New(listItems, d, width, height)
 l.SetDelegate(d)
 ```
 
-This code would replace [this line][replacedLine] in the [`list-default`
-example][listDefault].
+This code would replace [this line][replacedline] in the [`list-default`
+example][listdefault].
 
 For full control over the way list items are rendered you can also define your
-own `ItemDelegate` too ([example][customDelegate]).
+own `ItemDelegate` too ([example][customdelegate]).
 
+[customdelegate]: https://github.com/charmbracelet/bubbletea/blob/main/examples/list-simple/main.go#L29-L50
+[itemdelegate]: https://pkg.go.dev/github.com/charmbracelet/bubbles/list#ItemDelegate
 [kancli]: https://github.com/charmbracelet/kancli/blob/main/main.go#L45
-[itemDelegate]: https://pkg.go.dev/github.com/charmbracelet/bubbles/list#ItemDelegate
-[replacedLine]: https://github.com/charmbracelet/bubbletea/blob/main/examples/list-default/main.go#L77
-[listDefault]: https://github.com/charmbracelet/bubbletea/tree/main/examples/list-default
-[customDelegate]: https://github.com/charmbracelet/bubbletea/blob/main/examples/list-simple/main.go#L29-L50
+[listdefault]: https://github.com/charmbracelet/bubbletea/tree/main/examples/list-default
+[replacedline]: https://github.com/charmbracelet/bubbletea/blob/main/examples/list-default/main.go#L77

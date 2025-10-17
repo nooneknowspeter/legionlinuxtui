@@ -1,4 +1,4 @@
 # Test dependency
 [[constraint]]
-  branch = "master"
-  name = "github.com/kylelemons/godebug"
+branch = "master"
+name = "github.com/kylelemons/godebug"

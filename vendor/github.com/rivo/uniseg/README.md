@@ -11,11 +11,11 @@ This Go package implements Unicode Text Segmentation according to [Unicode Stand
 
 In Go, [strings are read-only slices of bytes](https://go.dev/blog/strings). They can be turned into Unicode code points using the `for` loop or by casting: `[]rune(str)`. However, multiple code points may be combined into one user-perceived character or what the Unicode specification calls "grapheme cluster". Here are some examples:
 
-|String|Bytes (UTF-8)|Code points (runes)|Grapheme clusters|
-|-|-|-|-|
-|Käse|6 bytes: `4b 61 cc 88 73 65`|5 code points: `4b 61 308 73 65`|4 clusters: `[4b],[61 308],[73],[65]`|
-|🏳️‍🌈|14 bytes: `f0 9f 8f b3 ef b8 8f e2 80 8d f0 9f 8c 88`|4 code points: `1f3f3 fe0f 200d 1f308`|1 cluster: `[1f3f3 fe0f 200d 1f308]`|
-|🇩🇪|8 bytes: `f0 9f 87 a9 f0 9f 87 aa`|2 code points: `1f1e9 1f1ea`|1 cluster: `[1f1e9 1f1ea]`|
+| String | Bytes (UTF-8)                                         | Code points (runes)                    | Grapheme clusters                     |
+| ------ | ----------------------------------------------------- | -------------------------------------- | ------------------------------------- |
+| Käse   | 6 bytes: `4b 61 cc 88 73 65`                          | 5 code points: `4b 61 308 73 65`       | 4 clusters: `[4b],[61 308],[73],[65]` |
+| 🏳️‍🌈     | 14 bytes: `f0 9f 8f b3 ef b8 8f e2 80 8d f0 9f 8c 88` | 4 code points: `1f3f3 fe0f 200d 1f308` | 1 cluster: `[1f3f3 fe0f 200d 1f308]`  |
+| 🇩🇪     | 8 bytes: `f0 9f 87 a9 f0 9f 87 aa`                    | 2 code points: `1f1e9 1f1ea`           | 1 cluster: `[1f1e9 1f1ea]`            |
 
 This package provides tools to iterate over these grapheme clusters. This may be used to determine the number of user-perceived characters, to split strings in their intended places, or to extract individual characters which form a unit.
 

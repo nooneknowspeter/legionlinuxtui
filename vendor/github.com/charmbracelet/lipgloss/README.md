@@ -339,7 +339,7 @@ func myLittleHandler(sess ssh.Session) {
 }
 ```
 
-For an example on using a custom renderer over SSH with [Wish][wish] see the
+For an example on using a custom renderer over SSH with [Wish] see the
 [SSH example][ssh-example].
 
 ## Utilities
@@ -765,30 +765,21 @@ instead of concerning yourself with low-level layout details.
 
 In simple terms, you can use Lip Gloss to help build your Bubble Tea views.
 
-[tea]: https://github.com/charmbracelet/tea
-
 ## Under the Hood
 
-Lip Gloss is built on the excellent [Termenv][termenv] and [Reflow][reflow]
+Lip Gloss is built on the excellent [Termenv] and [Reflow]
 libraries which deal with color and ANSI-aware text operations, respectively.
 For many use cases Termenv and Reflow will be sufficient for your needs.
-
-[termenv]: https://github.com/muesli/termenv
-[reflow]: https://github.com/muesli/reflow
 
 ## Rendering Markdown
 
 For a more document-centric rendering solution with support for things like
-lists, tables, and syntax-highlighted code have a look at [Glamour][glamour],
+lists, tables, and syntax-highlighted code have a look at [Glamour],
 the stylesheet-based Markdown renderer.
-
-[glamour]: https://github.com/charmbracelet/glamour
 
 ## Contributing
 
 See [contributing][contribute].
-
-[contribute]: https://github.com/charmbracelet/lipgloss/contribute
 
 ## Feedback
 
@@ -810,6 +801,11 @@ Part of [Charm](https://charm.sh).
 
 Charm热爱开源 • Charm loves open source
 
+[contribute]: https://github.com/charmbracelet/lipgloss/contribute
 [docs]: https://pkg.go.dev/github.com/charmbracelet/lipgloss?tab=doc
-[wish]: https://github.com/charmbracelet/wish
+[glamour]: https://github.com/charmbracelet/glamour
+[reflow]: https://github.com/muesli/reflow
 [ssh-example]: examples/ssh
+[tea]: https://github.com/charmbracelet/tea
+[termenv]: https://github.com/muesli/termenv
+[wish]: https://github.com/charmbracelet/wish

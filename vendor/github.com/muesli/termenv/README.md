@@ -336,8 +336,8 @@ termenv.DisableBracketedPaste()
 | Windows cmd      |         ❌         |          ✅           |        ✅        |         ✅          |                ✅                 |                ✅                 |       ❌        |          ❌          |            ❌             |
 | Windows Terminal |         ❌         |          ✅           |        ✅        |         ✅          |                ✅                 |                ✅                 |       ✅        |          ✅          |            ❌             |
 
-[^vte]: This covers all vte-based terminals, including Gnome Terminal, guake, Pantheon Terminal, Terminator, Tilix, XFCE Terminal.
-[^mux]: Unavailable as multiplexers (like tmux or screen) can be connected to multiple terminals (with different color settings) at the same time.
+\[^vte\]: This covers all vte-based terminals, including Gnome Terminal, guake, Pantheon Terminal, Terminator, Tilix, XFCE Terminal.
+\[^mux\]: Unavailable as multiplexers (like tmux or screen) can be connected to multiple terminals (with different color settings) at the same time.
 
 You can help improve this list! Check out [how to](ansi_compat.md) and open an issue or pull request.
 
@@ -368,13 +368,13 @@ You can help improve this list! Check out [how to](ansi_compat.md) and open an i
 | Windows cmd      |            ❌             |        ❌         |           ❌           |
 | Windows Terminal |            ✅             |        ✅         |           ❌           |
 
-[^vte]: This covers all vte-based terminals, including Gnome Terminal, guake, Pantheon Terminal, Terminator, Tilix, XFCE Terminal. OSC52 is not supported, see [issue#2495](https://gitlab.gnome.org/GNOME/vte/-/issues/2495).
-[^urxvt]: Workaround for urxvt not supporting OSC52. See [this](https://unix.stackexchange.com/a/629485) for more information.
-[^konsole]: OSC52 is not supported, for more info see [bug#372116](https://bugs.kde.org/show_bug.cgi?id=372116).
-[^apple]: OSC52 works with a [workaround](https://github.com/roy2220/osc52pty).
-[^tmux]: OSC8 is not supported, for more info see [issue#911](https://github.com/tmux/tmux/issues/911).
-[^screen]: OSC8 is not supported, for more info see [bug#50952](https://savannah.gnu.org/bugs/index.php?50952).
-[^alacritty]: OSC8 is supported since [v0.11.0](https://github.com/alacritty/alacritty/releases/tag/v0.11.0)
+\[^vte\]: This covers all vte-based terminals, including Gnome Terminal, guake, Pantheon Terminal, Terminator, Tilix, XFCE Terminal. OSC52 is not supported, see [issue#2495](https://gitlab.gnome.org/GNOME/vte/-/issues/2495).
+\[^urxvt\]: Workaround for urxvt not supporting OSC52. See [this](https://unix.stackexchange.com/a/629485) for more information.
+\[^konsole\]: OSC52 is not supported, for more info see [bug#372116](https://bugs.kde.org/show_bug.cgi?id=372116).
+\[^apple\]: OSC52 works with a [workaround](https://github.com/roy2220/osc52pty).
+\[^tmux\]: OSC8 is not supported, for more info see [issue#911](https://github.com/tmux/tmux/issues/911).
+\[^screen\]: OSC8 is not supported, for more info see [bug#50952](https://savannah.gnu.org/bugs/index.php?50952).
+\[^alacritty\]: OSC8 is supported since [v0.11.0](https://github.com/alacritty/alacritty/releases/tag/v0.11.0)
 
 </details>
 
