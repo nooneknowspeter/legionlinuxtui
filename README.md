@@ -25,7 +25,7 @@ It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/Lenov
 
 #### NUR
 
-Users who has the [NUR](https://github.com/nix-community/NUR) setup, you can install [legionlinuxtui](https://nur.nix-community.org/repos/nooneknowspeter/) using:
+Users who have the [NUR](https://github.com/nix-community/NUR) setup, you can install [legionlinuxtui](https://nur.nix-community.org/repos/nooneknowspeter/) using:
 
 ```nix
 nur.repos.nooneknowspeter.legionlinuxtui
