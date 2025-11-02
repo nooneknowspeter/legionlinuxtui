@@ -1,3 +1,3 @@
 # TODO
 
-- [ ] NUR distribution
+- [x] NUR distribution
