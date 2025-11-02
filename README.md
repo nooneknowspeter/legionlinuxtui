@@ -23,7 +23,60 @@ It utilizes the [Lenovo Legion Linux Drivers](https://github.com/johnfanv2/Lenov
 
 ### NixOS
 
-Soon.
+#### NUR
+
+Users who has the [NUR](https://github.com/nix-community/NUR) setup, you can install [legionlinuxtui](https://nur.nix-community.org/repos/nooneknowspeter/) using:
+
+```nix
+nur.repos.nooneknowspeter.legionlinuxtui
+```
+
+#### Flakes
+
+You can install legionlinuxtui without having the [NUR](https://github.com/nix-community/NUR)
+setup by using my [NUR flake](https://github.com/nooneknowspeter/nurpkgs) directly.
+
+In your `flake.nix`, add the repo as an input:
+
+```nix
+inputs = {
+    nooneknowspeter = {
+      url = "github:nooneknowspeter/nurpkgs";
+    };
+}
+```
+
+> [!NOTE]
+>
+> Ensure that you [inherit the inputs](https://nixos.wiki/wiki/Flakes) in your NixOS or Home-Manager configurations
+
+> [!NOTE]
+>
+> Either `inputs.nooneknowspeter.packages.x86_64-linux.legionlinuxtui`
+> or `inputs.nooneknowspeter.packages.x86_64-linux.legionlinuxtui-git` can be used at a time.
+>
+> `legionlinuxtui-git` builds from the latest commit from the main branch (rolling release)
+> and `legionlinux` builds from each tagged version, so pick your poison.
+
+Add the package to your system environment packages:
+
+```nix
+environment.systemPackages = with pkgs; [
+    inputs.nooneknowspeter.packages.x86_64-linux.legionlinuxtui
+]
+```
+
+or in Home-Manager packages:
+
+```nix
+home.packages = with pkgs; [
+    inputs.nooneknowspeter.packages.x86_64-linux.legionlinuxtui
+]
+```
+
+> [!NOTE]
+>
+> Run the application with `sudo` privileges.
 
 ## Setup
 
